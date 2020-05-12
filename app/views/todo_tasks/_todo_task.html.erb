@@ -1,4 +1,48 @@
-<p><%= todo_task.task %></p>
-<p><%= todo_task.deadline %> </p>
 
-<%= link_to "Delete", todo_list_todo_task_path(@todo_list, todo_task.id), method: :delete, data: { confirm: "Are you sure?" } %>
+
+<div class="row clearfix">
+  <% if todo_task.completed? %>
+
+    <div class="todo_task done">
+      <p><%= todo_task.task %></p>
+    </div>
+    <div class="todo_priority done">
+    <p><%= todo_task.priority %></p>
+    </div>
+    <div class="todo_deadline done">
+      <p><%= todo_task.deadline %> </p>
+    </div>
+
+    <div class="complete">
+      <%= link_to complete_todo_list_todo_task_path(@todo_list, todo_task.id), method: :patch do %>
+    <i style="opacity: 1;" class="fa fa-check"></i>
+   <% end %>
+    </div>
+    <div class="trash">
+      <%= link_to todo_list_todo_task_path(@todo_list, todo_task.id), method: :delete, data: { confirm: "Are you sure?" } do %>
+    <i class="fa fa-trash"></i>
+   <% end %>
+    </div>
+  <% else %>
+    
+    <div class="todo_task">
+      <p><%= todo_task.task %></p>
+    </div>
+    <div class="todo_priority">
+    <p><%= todo_task.priority %></p>
+    </div>
+    <div class="todo_deadline">
+      <p><%= todo_task.deadline %> </p>
+    </div>
+    <div class="complete"><%= link_to complete_todo_list_todo_task_path(@todo_list, todo_task.id), method: :patch do %>
+    <i class="fa fa-circle-thin"></i>
+   <% end %>
+   </div>
+    <div class="trash">
+      <%= link_to todo_list_todo_task_path(@todo_list, todo_task.id), method: :delete, data: { confirm: "Are you sure?" } do %>
+    <i class="fa fa-trash"></i>
+   <% end %>
+    </div>
+  <% end %>
+</div>
+

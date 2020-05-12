@@ -1,12 +1,14 @@
 <%= form_for([@todo_list, @todo_list.todo_tasks.build]) do |f| %>
 <div class="field"> 
     <%= f.label :task %>
-    <%= f.text_field :task %>
-</div>
-
-<div class="field">
     <%= f.label :deadline %> 
-    <%= f.date_select :deadline %> 
+    <%= f.label :priority %>
+    
+    <%= f.text_field :task %>
+   
+    <%= f.date_select :deadline, min: Date.today  %> 
+    <%= f.select :priority, TodoTask.priorities.keys %>
+    
   </div>
  <%= f.submit %>
 <% end %>
