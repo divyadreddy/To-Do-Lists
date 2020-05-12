@@ -1,3 +1,13 @@
+<% @todo_lists.each do |todo_list| %>
+<div class="index_row clearfix">
+  <p class="todo_list_title"><%= link_to todo_list.title, todo_list %></p>
+</div>
+<% end %>
+<div class="index_row clearfix ">
+  <%= link_to "New Todo List", new_todo_list_path %>
+</div>
+
+<!--
 <p id="notice"><%= notice %></p>
 
 <h1>Todo Lists</h1>
@@ -25,3 +35,4 @@
 <br>
 
 <%= link_to 'New Todo List', new_todo_list_path %>
+-->
