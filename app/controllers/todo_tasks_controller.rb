@@ -11,7 +11,7 @@ class TodoTasksController < ApplicationController
     end
     
     def todo_task_params
-        params[:todo_task].permit(:task, :deadline)
+        params[:todo_task].permit(:task, :deadline, :priority)
     end
 
     def complete

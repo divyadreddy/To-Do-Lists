@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     resources :todo_tasks do
     member do
       patch :complete
+      patch :priority
      end
   end
 end

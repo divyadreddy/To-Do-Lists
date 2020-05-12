@@ -2,13 +2,17 @@
 
 <div class="row clearfix">
   <% if todo_task.completed? %>
-    
-    <div class="todo_task">
-      <p style="opacity: 0.4;"><strike><%= todo_task.task %></strike></p>
+
+    <div class="todo_task done">
+      <p><%= todo_task.task %></p>
     </div>
-    <div class="todo_deadline">
+    <div class="todo_priority done">
+    <p><%= todo_task.priority %></p>
+    </div>
+    <div class="todo_deadline done">
       <p><%= todo_task.deadline %> </p>
     </div>
+
     <div class="complete">
       <%= link_to complete_todo_list_todo_task_path(@todo_list, todo_task.id), method: :patch do %>
     <i style="opacity: 1;" class="fa fa-check"></i>
@@ -23,6 +27,9 @@
     
     <div class="todo_task">
       <p><%= todo_task.task %></p>
+    </div>
+    <div class="todo_priority">
+    <p><%= todo_task.priority %></p>
     </div>
     <div class="todo_deadline">
       <p><%= todo_task.deadline %> </p>

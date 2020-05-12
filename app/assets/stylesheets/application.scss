@@ -108,8 +108,22 @@ body {
             // border-right: 1px solid rgba(250, 250, 250, .3);
             padding: 1em 0;
         }
+        .done {
+            text-decoration: line-through;
+            opacity: 0.4
+        }
         .todo_task {
-            width: 60%;
+            width: 52%;
+            float: left;
+            p {
+                margin: 0;
+                padding: 1em;
+                color: $dark;
+                font-weight: 100;
+            }
+        }
+        .todo_priority {
+            width: 10%;
             float: left;
             p {
                 margin: 0;
@@ -144,10 +158,37 @@ body {
         }
     }
     #form {
+        width: 100%;
         margin-top: 2em;
         padding: 0 5%;
         input[type="text"] {
-            width: 72%;
+            width: 42%;
+            float: left;
+            margin-right: 2%;
+            display: inline-block;
+            outline: none;
+            background: rgba(250, 250, 250, .4);
+            border: none;
+            height: 40px;
+            border-radius: 4px;
+            padding: 1em 2em;
+        }
+        label {
+            width: 30%;
+            float: left;
+            margin-right: 2%;
+            text-align: right;
+            display: inline-block;
+            outline: none;
+            // background: rgba(250, 250, 250, .4);
+            border: none;
+            height: 40px;
+            border-radius: 4px;
+            padding: 1em 2em;
+        }
+        select {
+            width: 10%;
+            // float: left;
             margin-right: 2%;
             display: inline-block;
             outline: none;
@@ -158,12 +199,14 @@ body {
             padding: 1em 2em;
         }
         input[type="submit"] {
+            margin-top: 10px;
+            width: 100%;
             background: rgba(250, 250, 250, .4);
             outline: none;
             border: none;
+            align-self: center;
             height: 40px;
             border-radius: 4px;
-            width: 25%;
             display: inline-block;
             transition: all .4s ease-in-out;
             cursor: pointer;
