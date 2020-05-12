@@ -1,0 +1,12 @@
+<%= form_for([@todo_list, @todo_list.todo_tasks.build]) do |f| %>
+<div class="field"> 
+    <%= f.label :task %>
+    <%= f.text_field :task %>
+</div>
+
+<div class="field">
+    <%= f.label :deadline %> 
+    <%= f.date_select :deadline %> 
+  </div>
+ <%= f.submit %>
+<% end %>

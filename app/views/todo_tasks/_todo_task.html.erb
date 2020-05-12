@@ -1,0 +1,4 @@
+<p><%= todo_task.task %></p>
+<p><%= todo_task.deadline %> </p>
+
+<%= link_to "Delete", todo_list_todo_task_path(@todo_list, todo_task.id), method: :delete, data: { confirm: "Are you sure?" } %>

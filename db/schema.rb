@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_12_063216) do
+ActiveRecord::Schema.define(version: 2020_05_12_073923) do
 
   create_table "todo_lists", force: :cascade do |t|
     t.string "title"
@@ -18,4 +18,14 @@ ActiveRecord::Schema.define(version: 2020_05_12_063216) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "todo_tasks", force: :cascade do |t|
+    t.string "task"
+    t.date "deadline"
+    t.integer "todo_list_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["todo_list_id"], name: "index_todo_tasks_on_todo_list_id"
+  end
+
+  add_foreign_key "todo_tasks", "todo_lists"
 end
